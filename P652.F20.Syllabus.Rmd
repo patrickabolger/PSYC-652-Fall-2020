@@ -1,0 +1,510 @@
+---
+title:  |
+  ![](images/TAM-PrimaryMarkA.png){ width=25%}
+subtitle: "Syllabus for PSYC 652: Stats & Research Methods for I/O Psychology I (Fall '20)"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+output:
+  html_document:
+    theme: cerulean
+    df_print: paged
+---
+
+<!-- Setup -->
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = F, warning = F, message = F)
+```
+
+```{r LoadPackages, include=F}
+#if(!require(pacman)){install.packages("pacman");require(pacman)} # un-comment and run this if the 'pacman' package is not installed. 
+# It's required for the function below.
+pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr)
+
+```
+
+# {.tabset .tabset-fade .tabset-pills}
+
+## Overview
+
+<!-- Course Info -->
+
+| **Course Information**                                                                                           |
+|:------------------:|:------------------------------------:|:-------:|:------------:|:--------:|:------------:|
+|    **Course Number**   |                 **Title**                | **Section** |     **Time**     | **Location** | **Credit Hours** |
+|      PSYC 652      | Statistics and Research Methods for I/O Psychology I |   601   | TTh 9:45-11:00 am |  PSYC 422  |       3      |
+
+<br/>
+
+|  **Class-Leader Information**                                                                                             |
+|:-----------------:|:---------------------:|:----------------:|:------------------:|:-----------------:|:-------------:|
+|            **Role**            |         **Name**        |     **Office**     |      **E-Mail**      |    **Zoom Hours**   |  **Zoom Link**$\dagger$ |
+| Instructor                 | Patrick Bolger, PhD | Psychology 225 | pbolger@tamu.edu | Fridays, 1-3 pm | [click here](https://tamu.zoom.us/j/811222380) |
+
+
+$\dagger$ See extended Zoom information under the sub-tab ***Zoom Info***
+
+## Description {.tabset .tabset-fade .tabset-pills}
+
+### General
+
+This is an introductory graduate course in data analysis, tailored specifically for Industrial/Organizational Psychology. It focuses on data wrangling and the *general linear model* (GLM). Data wrangling is anything and everything that has to do with preparing data for statistical analysis. It actually comprises the bulk of work that those devoted exclusively to data analysis engage in. 
+
+The GLM is a family of statistical analyses (most of them, actually) united under one framework (there is a broader family that will be covered in the 2nd semester). A strong foundation in the GLM will prepare you to see the similarities (instead of the differences) among all the statistical tests that you might encounter in the future (or have already encountered). 
+
+There will be an emphasis in this course on both a conceptual understanding and the application of statistics through software. There will be some math, but it will mostly be the same thing over and over (since we will be using one framework). It won't be too long before you see the mathematical unity of it all. 
+
+In addition to learning conceptual issues, which will be measured through occasional quizzes, this course involves semi-weekly practical homework assignments that will give you hands-on experience, facilitating your understanding of the following software tools: MS Excel, R, Markdown, RMarkdown, and SPSS... but mostly R.
+
+<br/>
+
+### Prerequisites
+
+Graduate classification or approval of instructor.
+
+<br/>
+
+### Meetings
+
+Meetings occur on Tuesday and Thursday mornings from 9:45 to 11:00 am in Psychology 422. It will also be presented simultaneously online (and recorded) through Zoom on Canvas. 
+
+The class will be "platooned," where one portion of the class attends face-to-face on Tuesdays, and the rest on Thursdays (among those who want to attend face-to-face).
+
+<br/>
+
+### Course Catalog Description  
+
+If you are interested for some reason, the [description from the Undergraduate Course Catalog](https://catalog.tamu.edu/undergraduate/course-descriptions/psyc/) is quoted below.
+
+>The first of two courses in statistics and research methods; integrates research design, appropriate methodology, and advanced statistical techniques used by industrial/organizational psychologists (e.g., General Linear Model); current topics pertinent to the content domain draws heavily from the application of quantitative psychology literature to workplace problems; statistical software packages will be used to enhance conceptual understanding.
+
+<br/>
+
+## Outcomes  {.tabset .tabset-fade .tabset-pills}
+
+### Course {.tabset .tabset-fade .tabset-pills}
+
+This course has the following specific learning outcomes. At the conclusion of the course, you should have the following:
+
+<br/>
+
+#### Concepts  
+
+- A renewed understanding$^{\dagger}$ of basic statistical concepts of the type normally covered in undergraduate Psychology courses  
+- An excellent understanding$^{\ddagger}$ of the basics of the *General Linear Model* (GLM) and how it unites multiple linear regression and ANOVA designs into one framework  
+- A thorough understanding$^{\dagger\dagger}$ of the model-comparison approach to statistics as an alternative to traditional null-hypothesis testing  
+- A strong understanding$^{\dagger\dagger}$ of how the GLM meshes with particular research designs   
+  
+<br/>
+
+#### Software tools for data wrangling 
+
+- The ability$^{\dagger}$ to use spreadsheets for data entry, organization, manipulation, and data export to more powerful statistical software programs   
+- A basic, working knowledge$^{\dagger}$ of the data-wrangling capabilities of the open-source statistical programming language [R](https://www.r-project.org/) through the IDE [RStudio](https://www.rstudio.com/)  
+- Fluency$^{\ddagger}$ in using [RMarkdown](https://rmarkdown.rstudio.com/), which is a way to combine word processing (as [Markdown](https://daringfireball.net/projects/markdown/)) and statistical software (R) into one platform for writing up reports, presentations, and manuscripts    
+- The equivalent to the point above (to the extent possible)$^{\dagger}$ in both spreadsheets (for most or all of you, [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel)) and [SPSS](https://www.ibm.com/analytics/spss-statistics-software)  
+  
+<br/>
+
+#### Software tools for statistics  
+- The ability$^{\ddagger}$ to implement the GLM using R and SPSS    
+- A strong understanding$^{\ddagger}$ of how not only to test for compliance with assumptions, but also to interpret the results  
+
+--- 
+
+$\dagger$ ... as measured on homework  
+$\dagger\dagger$ ... as measured on quizzes and the exam  
+$\ddagger$ ... as measured on all    
+  
+<br/>
+
+### University {.tabset .tabset-fade .tabset-pills}
+
+Texas A&M University has identified student learning outcomes that describe our institutional commitment to your educational goals. These include the ability to demonstrate critical thinking, effective communication, and social, cultural, and global competence. Please see [https://catalog.tamu.edu/undergraduate/general-information/student-learning-outcomes/](https://catalog.tamu.edu/undergraduate/general-information/student-learning-outcomes/). 
+
+<br/>
+    
+#### Knowledge Required for the Degree  
+
+***MORE MORE MORE***
+
+<br/>
+
+#### Critical Thinking  
+
+Since statistics is the math of uncertainty, there is a great deal of critical thinking involved. The classic illustration of this is [Simpson's Paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox). Statistics is a tool for scientific reasoning, but it is incomplete without critical thinking. We will encounter this often in this course.
+
+<br/>
+
+#### Communication  
+
+You will learn how to communicate statistical results to other researchers in Psychology, as well as colleagues in industry. These can be **very** different audiences. 
+
+<br/>
+
+#### Personal and Social Responsibility  
+
+You will consider how data should be collected, presented, and interpreted in an ethical manner. You will learn about the importance of transparency in conducting and reporting statistical analyses.  
+
+<br/>
+
+#### Collaboration  
+
+Much of this class will involve (or at least permit) collaboration. We will spend some time on how this is done with modern tools In fact, this is a really important issue that often gets overlooked in the world of data science and statistics, and even more commonly in academia. In my opinion, doing things the "old-fashioned way" is a **major** contributor to workflow bottlenecks and errors.
+
+<br/>
+
+## Materials {.tabset .tabset-fade .tabset-pills}
+
+<br/>
+
+### Textbook
+
+- Flora, D. (2018). *Statistical methods for the social and behavioural sciences: A model-based approach.* Los Angeles, CA: SAGE.  
+ 
+<br/>
+
+### Computer
+
+You'll need a laptop for this class (Mac or Windows) if you plan to attend in person. Linux may also be possible, though you'd need to substitute MS Excel with something like *Libre Office Calc*. 
+
+The university would allow you to purchase a desktop for remote learning (see [here](https://it.tamu.edu/services/academics-and-research/teaching-and-learning-tools/computer-requirements/)). But I really would not suggest substituting a desktop for a laptop because, eventually, the I/O Master's students are constantly working with each other in various contexts. I doubt a desktop at home would be sufficient. There may already be a laptop requirement for MSIOP.
+
+The university has also specified in the same link above that you're required to have *an integrated webcam* for remote learning. I suppose implicit in that is a microphone and speakers (or preferably, a headset so that ambient noise in your environment doesn't cause embarrassment).
+
+### Software   
+
+- [R](https://www.r-project.org/). When you download it, you're supposed to choose a local mirror of the main server in Austria. You usually choose the closest one, which in our case is *Revolution Analytics* in Dallas. But I go with "Global (CDN) - RStudio". Apparently, this just automatically finds the closest server for you.  
+- [RStudio Desktop](https://rstudio.com/products/rstudio/download/). This download isn't necessary to use *R*, per se, but there is virtually no one left who doesn't use it (or one of its sisters IDEs, like *Jupyter Notebook*, or *RCommander*). An IDE (Integrated Development Environment) is a computer program that makes writing computer scripts easier. RStudio is **by far** the most popular IDE for R. It makes using R much easier, as well as adding other really useful features, like projects and RMarkdown, both of which we will use extensively.
+- [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel). If you don't already have this on your computer, you can use cloud version at Texas A&M. Microsoft's cloud-computing service is called *Office 365*. The Texas A&M login for Office 365 is located [here](https://gateway.tamu.edu/office365/). You can also find MS Excel on Texas A&M's [Virtual Online Access Lab (VOAL)](https://voal.tamu.edu/).  
+- [SPSS](https://www.ibm.com/analytics/academic-statistical-software). There is apparently a room in Milner that serves as your lab. SPSS is located on those machines. But for the Fall semester, 2020, SPSS is also being offered on the [VOAL](https://connect.voal.tamu.edu/) (normally, it isn't, and I don't know about Spring, 2021).
+
+<br/>
+
+### LinkedIn Learning
+
+- There are  [LinkedIn Learning Tutorials](https://linkedinlearning.tamu.edu/) at your disposal at Texas A&M, which you can get to them through the Howdy! portal (it's one of the icons running across the top)  
+  - I think you also need a [LinkedIn](https://www.linkedin.com/) account, which everyone in your field seems to use anyway  
+
+- I have set aside for this PSYC 652 class a [collection of these tutorials](https://www.linkedin.com/learning-login/share?forceAccount=true&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fcollections%2F6695334822115725312%3Ftrk%3Dshare_collection_url&account=74650722), the purpose of which is to put all the tutorials you need for your various homework assignments in one place.
+
+<br/>
+  
+### Helpful Resources
+
+There are so many free resources on programming in R that I suspect the commercial textbook industry is going to give up on R pretty soon. The most convenient, productive location for these resources is now the [Bookdown](https://www.bookdown.org/) website. *Bookdown* is an R package that takes RMarkdown files, and turns them into book chapters (For what it's worth, my [PSYC 301 lab manual](https://patrickabolger.github.io/ElemStatsLabManual/) is built in Bookdown, though it's housed at [GitHub](https://github.com/)).  
+
+The most noteworthy books are listed on the home page of Bookdown, but you'll find many, many more if you go to the [archive](https://www.bookdown.org/home/archive/) page. Many of these books are in other languages.
+
+Of the books on the home page, there are three that will be **really, really** handy for you in this class:  
+
+<br/>
+
+---
+
+- Grolemund, G., & Wickham, H. (2017). [R for data science](https://r4ds.had.co.nz/). Sebastopol, CA: O'Reilly Media, Inc.  
+
+From the *Welcome* page:
+
+>This is the website for “R for Data Science”. This book will teach you how to do data science with R: You’ll learn how to get your data into R, get it into the most useful structure, transform it, visualise it and model it. In this book, you will find a practicum of skills for data science. 
+
+---
+
+<br/>
+
+- Peng, R. (2019). [R programming for data science](https://bookdown.org/rdpeng/rprogdatascience/). LeanPub (https://leanpub.com/).
+
+From the *Welcome* page:  
+
+>This book is about the fundamentals of R programming. You will get started with the basics of the language, learn how to manipulate datasets, how to write functions, and how to debug and optimize code. With the fundamentals provided in this book, you will have a solid foundation on which to build your data science toolbox.
+
+---
+
+<br/>
+
+- Xie, Y., Allaire, J. J., & Grolemund, G. (2019). *R Markdown: The definitive guide*. Boca Raton, FL: CRC Press, Taylor & Francis Group.
+
+From the description on the home page of Bookdown:  
+
+>The first official book authored by the core R Markdown developers that provides a comprehensive and accurate reference to the R Markdown ecosystem. With R Markdown, you can easily create reproducible data analysis reports, presentations, dashboards, interactive applications, books, dissertations, websites, and journal articles, while enjoying the simplicity of Markdown and the great power of R and other languages.
+
+---
+
+<br/>
+
+**IMPORTANT NOTE**: These online, bookdown books are free. The publishers are there only for people who want hard copies.
+
+<br/>
+
+```{r ClassPoints}
+# For aesthetics, the class points are set up in a separate R script (not RMarkdown)
+# Homework
+hwVal <- 20 # value
+hwQnt <-10 # quantity
+hwTot <- hwVal*hwQnt # total (repeats below)
+
+# Quizzes
+qzVal <- 100
+qzQnt <- 5
+qzTot <- qzVal*qzQnt
+
+# Exams
+fnlVal <- 200
+fnlQnt <- 1
+fnlTot <- fnlVal*fnlQnt
+
+# Attendance
+atndVal <- 4
+atndQnt <- 28
+atndTot <- atndVal*atndQnt
+
+gradeTot <- 1000
+pntsPoss <- sum(hwTot,qzTot,fnlTot,atndTot)
+```
+
+## Tasks {.tabset .tabset-fade .tabset-pills}
+
+There are `r gradeTot` points that count towards the final grade in this class (out of `r pntsPoss` possible). The breakdown is below:  
+
+<br/>
+
+### Homework
+
+There will be `r hwQnt` homework assignments based on tutorials in either *Kanopy* or *LinkedIn Learning*. Each is worth `r hwVal` points, for a total of `r hwTot`.
+
+<br/>
+
+### Take-home Quizzes
+
+There will be `r qzQnt` take-home quizzes based on the Chapters in the Flora textbook. Each is worth `r qzVal` points, for a total of `r qzTot`.  
+
+<br/>
+
+### Take-home Final Exam
+
+There will be one take-home final exam, which is worth `r fnlTot` points. You will all replicate a study of your collective choosing from I/O Psychology. Each of you will end up with different data with different results. However, conceptually you can talk to each other about your findings and what they mean.
+
+<br/>
+
+### Attendance
+
+This is unusual for a graduate class, but in semesters past, some students in this course decided to stop coming. You can't afford that kind of mistake. So I'm making attendance part of the grade. Each attendance is worth `r atndVal` points. There are `r atndQnt` classes, meaning `r atndTot` points. This puts us `r pntsPoss-gradeTot` points past the maximum number of points in the class, but that's okay. Do not miss these easy points. Since there are 3 "extra" classes here, I will be very strict about attendance, unless you are in dire straits.
+
+<br/>
+
+## Grades {.tabset .tabset-fade .tabset-pills}
+
+### By task 
+
+Final grades will be assigned at the end of the semester on the basis of the total number of points earned out of a possible 700 points, based on the following components:  
+
+|       **Component**      | **Points per Component** | **Number of Components** | **Total Points** |  %  |
+|:--------------------:|:--------------------:|:--------------------:|:------------:|:---:|
+| Homework             |          `r hwVal`          |          `r hwQnt`          |      `r hwTot`     |  `r (hwTot/gradeTot)*100` |
+| Take-home Quizzes    |          `r qzVal`         |           `r qzQnt`          |      `r qzTot`     |  `r (qzTot/gradeTot)*100` |
+| Take-home Final Exam |          `r fnlVal`         |           `r fnlQnt`          |      `r fnlTot`     |  `r (fnlTot/gradeTot)*100` |
+| Attendance           |          `r atndVal`           |          `r atndQnt`          |      `r atndTot`     |  `r (atndTot/gradeTot)*100` |
+| **Totals**           |                      |                      |  **1,000**$^{\dagger\dagger}$   |**100**$^{\dagger\dagger}$|
+
+$\dagger\dagger$ Obviously, there are `r pntsPoss-gradeTot` extra points possible beyond the `r gradeTot` point limit, and these extra points come through attendance. Your point total will still be calculated out of `r gradeTot` points, though you could go over, theoretically.  
+
+<br/>
+
+### Letter Grades  
+
+The letter grades will be assigned as follows: 
+
+
+| Grade 	| A 	| B 	| C 	| D 	| F 	|
+|:--------:	|:------------:	|:---------------:	|:---------------:	|:---------------:	|:---------------:	|
+| Percents 	| 89.5 to 100% 	| 79.5 to 89.499% 	| 69.5 to 79.499% 	| 59.5 to 69.499% 	| Less than 59.5% 	|
+| Points 	| `r .895*gradeTot` to  `r gradeTot`	| `r .795*gradeTot` to `r round(.89499*gradeTot,3)` 	| `r .695*gradeTot` to `r round(.79499*gradeTot,3)` 	| `r .595*gradeTot` to `r round(.69499*gradeTot,3)` 	| Less than `r .595*gradeTot` 	|
+
+## Schedule
+
+```{r}
+MainCalendar <- read_tsv("tables/ClassCalendar.tsv", na="") 
+```
+
+```{r SyllabusCalendar}
+kable(MainCalendar,
+caption = 'Course schedule by week') %>%
+pack_rows("Unit 0a: Preliminaries", 1, 1) %>%  
+pack_rows("Unit 0b: Review of Undergraduate Statistics / R, Markdown, RMarkdown", 2, 5) %>%
+pack_rows("Unit 1 - Chapter 1: Simple Regression Models", 6, 9) %>%
+pack_rows("Unit 2 - Chapter 2: Multiple Regression Models", 10, 16) %>%
+pack_rows("Unit 3 - Chapter 3: Regression with Categorical Predictors", 17, 19) %>%
+pack_rows("Unit 4 - Chapter 4: Interactions in Multiple Regression", 20, 23) %>%
+pack_rows("Unit 5 - Chapter 5: Mediation and other Indirect Effects", 24, 25) %>%
+pack_rows("Unit 6 - Chapter 7: Basic Matrix Algebra for Statistical Modeling", 26, 28) %>%
+pack_rows("Take-home Final Exam", 29, 29) %>%
+row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
+row_spec(29:29, bold = T, color = "white", background = "#500000") %>%
+kable_styling(bootstrap_options = "striped", font_size=14, full_width = F, position = "left")
+```
+
+## Office Hours
+
+Join Zoom Meeting
+https://tamu.zoom.us/j/98368918779?pwd=RzY0TlZpMEs1cHJyUGRscUFJY2hCZz09
+
+Meeting ID: 983 6891 8779
+Passcode: 629276
+
+One tap mobile
++13462487799,,98368918779# US (Houston)
++16699006833,,98368918779# US (San Jose)
+
+Find your local number: https://tamu.zoom.us/u/aeG7mfJBef
+
+Join by SIP
+98368918779@zoomcrc.com
+
+Join by Skype for Business
+https://tamu.zoom.us/skype/98368918779
+
+<br/>
+
+## Policies {.tabset .tabset-fade .tabset-pills}
+
+### Classroom {.tabset .tabset-fade .tabset-pills}
+
+#### Overview
+
+PSYC 652 is a learning community where civility and mutual respect are crucial for success. I will  lecture about statistics with enthusiasm and I will be be prepared to teach the material. I will treat you like mature members of a learning community. 
+
+Likewise, I expect that you will participate to the fullest extent possible, asking questions no matter how silly you think they are (they're not). 
+
+As graduate students, you should also know that a "good enough" attitude with respect to coursework (common among undergraduates) is no longer good enough. The tacit understanding between students and faculty in graduate school is that faculty are obsessed with their specialty, and students are only in graduate school because they absolutely **love the academic field**. Anything short of that on either end is not good enough. Anyway, let’s be nice to each other and have a great semester!
+
+<br/>
+
+#### Grade Disputes  
+
+If you wish to dispute a grade on an assignment or exam, you must submit a written rationale (email is fine) to justify the change **within 1 week of receiving your score in eCampus** for homework, quizzes, or exams.
+
+<br/>
+
+#### Cheating
+
+***MORE MORE MORE***
+
+### University {.tabset .tabset-fade .tabset-pills}
+
+#### Attendance
+
+The university views class attendance and participation as an individual student responsibility. Students are expected to attend class and to complete all assignments. 
+
+Please refer to [Student Rule 7](https://student-rules.tamu.edu/rule07/) in its entirety for information about excused absences, including definitions, and related documentation and timelines.
+
+<br/>
+
+#### Makeup Work
+
+Students will be excused from attending class on the day of a graded activity or when attendance contributes to a student’s grade, for the reasons stated in Student Rule 7, or other reason deemed appropriate by the instructor. 
+
+Please refer to [Student Rule 7](https://student-rules.tamu.edu/rule07/) in its entirety for information about makeup work, including definitions, and related documentation and timelines.
+
+Absences related to Title IX of the Education Amendments of 1972 may necessitate a period of more than 30 days for make-up work, and the time fram for make-up work should be agreed upon by the student and instructor” ([Student Rule 7, Section 7.4.1](https://student-rules.tamu.edu/rule07)).
+
+“The instructor is under no obligation to provide an opportunity for the student to make up work missed because of an unexcused absence” ([Student Rule 7, Section 7.4.2](https://student-rules.tamu.edu/rule07)).
+
+Students who request an excused absence are expected to uphold the Aggie Honor Code and Student Conduct Code. (See [Student Rule 24](https://student-rules.tamu.edu/rule24/).)
+
+<br/>
+
+#### Academic Integrity Statement
+
+>An Aggie does not lie, cheat or steal, or tolerate those who do.
+
+“Texas A&M University students are responsible for authenticating all work submitted to an instructor. If asked, students must be able to produce proof that the item submitted is indeed the work of that student. Students must keep appropriate records at all times. The inability to authenticate one’s work, should the instructor request it, may be sufficient grounds to initiate an academic misconduct case” ([Section 20.1.2.3, Student Rule 20](https://aggiehonor.tamu.edu/Rules-and-Procedures/Rules/Honor-System-Rules)).
+
+You can learn more about the Aggie Honor System Office Rules and Procedures, academic integrity, and your rights and responsibilities at [aggiehonor.tamu.edu](aggiehonor.tamu.edu).
+
+NOTE: Faculty associated with the main campus in College Station should use this Academic Integrity Statement and Policy. Faculty not on the main campus should use the appropriate language and location at their site.
+
+<br/>
+
+#### Americans with Disabilities Act (ADA)
+
+Texas A&M University is committed to providing equitable access to learning opportunities for all students. If you experience barriers to your education due to a disability or think you may have a disability, please contact Disability Resources in the Student Services Building or at (979) 845-1637 or visit [disability.tamu.edu](https://disability.tamu.edu/). Disabilities may include, but are not limited to attentional, learning, mental health, sensory, physical, or chronic health conditions. All students are encouraged to discuss their disability related needs with Disability Resources and their instructors as soon as possible.
+
+<br/>
+
+#### Title IX and Statement on Limits to Confidentiality
+
+Texas A&M University is committed to fostering a learning environment that is safe and productive for all. University policies and federal and state laws prohibit gender-based discrimination and sexual harassment, including sexual assault, sexual exploitation, domestic violence, dating violence, and stalking.
+
+With the exception of some medical and mental health providers, all university employees (including full and part-time faculty, staff, paid graduate assistants, student workers, etc.) are Mandatory Reporters and must report to the Title IX Office if the employee experiences, observes, or becomes aware of an incident that meets the following conditions (see [University Rule 08.01.01.M1](https://rules-saps.tamu.edu/PDFs/08.01.01.M1.pdf)):
+
+- The incident is reasonably believed to be discrimination or harassment. 
+-	The incident is alleged to have been committed by or against a person who, at the time of the incident, was (1) a student enrolled at the University or (2) an employee of the University. 
+
+Mandatory Reporters must file a report regardless of how the information comes to their attention – including but not limited to face-to-face conversations, a written class assignment or paper, class discussion, email, text, or social media post. Although Mandatory Reporters must file a report, in most instances, you will be able to control how the report is handled, including whether or not to pursue a formal investigation. The University’s goal is to make sure you are aware of the range of options available to you and to ensure access to the resources you need.
+
+Students wishing to discuss concerns in a confidential setting are encouraged to make an appointment with [Counseling and Psychological Services](https://caps.tamu.edu) (CAPS). 
+
+Students can learn more about filing a report, accessing supportive resources, and navigating the Title IX investigation and resolution process on the University’s [Title IX webpage](https://titleix.tamu.edu/).
+
+NOTE: Faculty associated with the main campus in College Station should use this Title IX and Statement on Limits of Liability. Faculty not on the main campus should use the appropriate language and location at their site.
+
+<br/>
+
+#### Statement on Mental Health and Wellness
+
+Texas A&M University recognizes that mental health and wellness are critical factors that influence a student’s academic success and overall well-being. Students are encouraged to engage in proper self-care by utilizing the resources and services available from Counseling & Psychological Services (CAPS). Students who need someone to talk to can call the TAMU Helpline (979-845-2700) from 4:00 p.m. to 8:00 a.m. weekdays and 24 hours on weekends. 24-hour emergency help is also available through the National Suicide Prevention Hotline (800-273-8255) or at [suicidepreventionlifeline.org](https://suicidepreventionlifeline.org/). 
+
+<br/>
+
+#### COVID-19 Temporary Amendment to Minimum Syllabus Requirements  {.tabset .tabset-fade .tabset-pills}
+
+The Faculty Senate temporarily added the following statements to the minimum syllabus requirements in Fall 2020 as part of the university’s COVID-19 response. 
+
+<br/>
+
+##### Campus Safety Measures
+
+To promote public safety and protect students, faculty, and staff during the coronavirus pandemic, Texas A&M University has adopted policies and practices for the Fall 2020 academic term to limit virus transmission. Students must observe the following practices while participating in face-to-face courses and course-related activities (office hours, help sessions, transitioning to and between classes, study spaces, academic services, etc.):
+
+- Self-monitoring — Students should follow CDC recommendations for self-monitoring. **Students who have a fever or exhibit symptoms of COVID-19 should participate in class remotely and should not participate in face-to-face instruction.**  
+- Face Coverings — [Face coverings](https://rules-saps.tamu.edu/PDFs/34.99.99.M0.03.pdf) (cloth face covering, surgical mask, etc.) must be properly worn in all non-private spaces including classrooms, teaching laboratories, common spaces such as lobbies and hallways, public study spaces, libraries, academic resource and support offices, and outdoor spaces where 6 feet of physical distancing is difficult to reliably maintain. Description of face coverings and additional guidance are provided in the [Face Covering policy](https://rules-saps.tamu.edu/PDFs/34.99.99.M0.03.pdf) and [Frequently Asked Questions (FAQ)](https://provost.tamu.edu/Menu/News/TAMU-Face-Covering-FAQs) available on the [Provost website](https://provost.tamu.edu/Menu/News/TAMU-Face-Covering-FAQs).  
+- Physical Distancing — Physical distancing must be maintained between students, instructors, and others in course and course-related activities.  
+- Classroom Ingress/Egress — Students must follow marked pathways for entering and exiting classrooms and other teaching spaces. Leave classrooms promptly after course activities have concluded. Do not congregate in hallways and maintain 6-foot physical distancing when waiting to enter classrooms and other instructional spaces.  
+- To attend a face-to-face class, students must wear a face covering (or a face shield if they have an exemption letter). If a student refuses to wear a face covering, the instructor should ask the student to leave and join the class remotely. If the student does not leave the class, the faculty member should report that student to the [Student Conduct Office](https://studentlife.tamu.edu/sco/face-covering-violations/) for sanctions. Additionally, the faculty member may choose to teach that day’s class remotely for all students.  
+
+<br/>
+
+##### Personal Illness and Quarantine
+
+Students required to quarantine must participate in courses and course-related activities remotely and must not attend face-to-face course activities. Students should notify their instructors of the quarantine requirement. Students under quarantine are expected to participate in courses and complete graded work unless they have symptoms that are too severe to participate in course activities.
+
+Students experiencing personal injury or Illness that is too severe for the student to attend class qualify for an excused absence (See [Student Rule 7, Section 7.2.2](https://student-rules.tamu.edu/rule07/).) To receive an excused absence, students must comply with the documentation and notification guidelines outlined in Student Rule 7. While Student Rule 7, Section 7.3.2.1, indicates a medical confirmation note from the student’s medical provider is preferred, **for Fall 2020 only, students may use the Explanatory Statement for Absence from Class form in lieu of a medical confirmation. Students must submit the Explanatory Statement for Absence from Class within two business days after the last date of absence.**
+
+<br/>
+
+##### Operational Details for Fall 2020 Courses
+
+For additional information, please review the [FAQ](https://provost.tamu.edu/Campus-Messages/Fall-2020-Courses-at-TAMU) on Fall 2020 courses at Texas A&M University.
+
+### College/Department {.tabset .tabset-fade .tabset-pills}
+
+#### Limits to Confidentiality
+
+Texas A&M University and the Department of Psychological and Brain Sciences are committed to fostering a learning environment that is safe and productive for all. University policies and federal and state laws provide guidance for achieving such an environment. Although class materials are generally considered confidential pursuant to student record policies and laws, University employees—including instructors—cannot maintain confidentiality when it conflicts with their responsibility to report certain issues that jeopardize the health and safety of our community. As the instructor, I must report the following information to other University offices if you share it with me, even if you do not want the disclosed information to be shared:  
+
+- Allegations of sexual assault, sexual discrimination, or sexual harassment when they involve TAMU students, faculty, or staff  
+- Credible threats of harm to oneself, to others, or to university property  
+    
+These reports may trigger contact from a campus official who will want to talk with you about the incident that you have shared. In many cases, it will be your decision whether or not you wish to speak with that individual.
+
+If you would like to talk about these events in a more confidential setting, you are encouraged to make an appointment with the [Student Counseling Service](https://scs.tamu.edu/)
+Students can report concerning, non-emergency behavior at [Tell Somebody](http://tellsomebody.tamu.edu).
+
+#### Respect for Diversity
+
+To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room. This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.
+
+**Respectful environment**: There are a number of topics during the semester that can make some people uncomfortable. To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room and these diverse experiences and backgrounds are not always obvious to the casual observer. Whereas it is 100% OK to disagree with someone, you must state your disagreements about the issue (and not the other person) and in a way that is respectful (i.e., does not belittle people or groups). This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.
