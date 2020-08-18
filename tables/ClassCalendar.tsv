@@ -1,30 +1,30 @@
 Day	Week	Date	Description
 Th	1	8/20/2020	Intros; syllabus; how the course is planned out; class-format; survey
-T	2	8/25/2020	Review of traditional statistics (central tendency, variance, standardization)
-Th	2	8/27/2020	Review of traditional statistics (covariance, correlation, assumptions, standard error, confidence intervals)
-T	3	9/1/2020	Review of traditional statistics (hypothesis testing, t-tests, ANOVA); reporting in APA style
-Th	3	9/3/2020	Downloading and installing R and RStudio; guidelines for assignments in RMarkdown; practicing with markdown and fenced code for R ("chunks")
+T	2	8/25/2020	Review of traditional statistics (central tendency, variance, standardization); HW#1: Kanopy -> Statistics Foundations, playlist 1 (Talitha Williams)
+Th	2	8/27/2020	Review of traditional statistics (covariance, correlation, assumptions, standard error, confidence intervals); HW#2: Kanopy -> Statistics Foundations, playlist 2 (Talitha Williams)
+T	3	9/1/2020	Review of traditional statistics (hypothesis testing, t-tests, ANOVA); reporting in APA style; HW#3: Kanopy -> Statistics Foundations, playlist 3 (Talitha Williams)
+Th	3	9/3/2020	Downloading and installing R and RStudio; guidelines for assignments in RMarkdown; practicing with markdown and fenced code for R ("chunks"); HW #4: LinkedIn Learning - Learning Markdown (Ray Villalobos)
 T	4	9/8/2020	F: Preface & Ch 1 (pp. 1-8, Chapter overview -> Significance testing & effect sizes)
-Th	4	9/10/2020	F: Ch 1 (pp. 8-18, Simple regression models -> Focal model for Y: Simple regression with a single predictor)
+Th	4	9/10/2020	F: Ch 1 (pp. 8-18, Simple regression models -> Focal model for Y: Simple regression with a single predictor); HW #5: LinkedIn Learning - Learning R (Barton Poulson)
 T	5	9/15/2020	F: Ch 1 (pp. 18-26, Simple linear regression: Model specification -> Dichotomous outcome?)
-Th	5	9/17/2020	F: Ch 1 (pp. 26-41, Basic regression diagnostic concepts -> Chapter summary)
+Th	5	9/17/2020	F: Ch 1 (pp. 26-41, Basic regression diagnostic concepts -> Chapter summary); HW#6: LinkedIn Learning -> Creating reports and presentation with RMarkdown (Charlie Hadley)
 T	6	9/22/2020	F: Ch 2 (pp. 42-49, Chapter overview -> Two-predictor multiple regression: Model estimation)
-Th	6	9/24/2020	F: Ch 2 (pp. 49-54, Illustration of the distinction between a partial effect and a marginal effect -> Multiple correlation)
+Th	6	9/24/2020	F: Ch 2 (pp. 49-54, Illustration of the distinction between a partial effect and a marginal effect -> Multiple correlation); take-home quiz #1 on Ch. 1
 T	7	9/29/2020	F: Ch 2 (pp. 54-58, Two-predictor multiple regression: Inference)
-Th	7	10/1/2020	F: Ch 2 (pp. 58-65, Standardized regression coefficients -> P predictor multiple regression: Inference and model comparisons)
+Th	7	10/1/2020	F: Ch 2 (pp. 58-65, Standardized regression coefficients -> P predictor multiple regression: Inference and model comparisons); HW#7: LinkedIn Learning -> Excel: Tracking data easily & efficiently
 T	8	10/6/2020	F: Ch 2 (pp. 66-72, Simultaneous regression -> Stepwise regression and other predictor selection methods)
-Th	8	10/8/2020	F: Ch 2 (pp. 72-81, Regression diagnostics revisited -> Weighted least squares)
+Th	8	10/8/2020	F: Ch 2 (pp. 72-81, Regression diagnostics revisited -> Weighted least squares); HW#8: LinkedIn Learning -> SPSS Statistics essential training (Barton Poulson) [sections 1-3]
 T	9	10/13/2020	F: Ch 2 (pp. 81-86, Multicollinearity -> Chapter summary)
-Th	9	10/15/2020	F: Ch 3 (pp. 87-96, Chapter overview -> Formal expression of ANOVA model as a multiple regression model)
+Th	9	10/15/2020	F: Ch 3 (pp. 87-96, Chapter overview -> Formal expression of ANOVA model as a multiple regression model); take-home quiz #2 on Ch. 2
 T	10	10/20/2020	F: Ch 3 (pp. 97-103, Using contrast-code variables -> Improved contrasts)
-Th	10	10/22/2020	F: Ch 3 (pp. 103-112, The ANalysis of COVAriance (ANCOVA) model and beyond -> Chapter summary
+Th	10	10/22/2020	F: Ch 3 (pp. 103-112, The ANalysis of COVAriance (ANCOVA) model and beyond -> Chapter summary; HW#9: LinkedIn Learning -> SPSS Statistics essential training (Barton Poulson) [sections 4-6 (skip 7)]
 T	11	10/27/2020	F: Ch 4 (pp. 113-118, Chapter overview -> Model specification and interpretation with a dichotomous moderator)
-Th	11	10/29/2020	F: Ch 4 (pp. 118-125, Probing an interaction with simple-slope analysis)
+Th	11	10/29/2020	F: Ch 4 (pp. 118-125, Probing an interaction with simple-slope analysis); take-home quiz #3 on Ch. 3
 T	12	11/3/2020	F: Ch 4 (pp. 125-131, Model specification and interpretation with a multicategory moderator -> Probing an interaction with a multicategory moderator)
-Th	12	11/5/2020	F: Ch 4 (pp. 131-143, Interactions with a continuous moderator -> Chapter summary
-T	13	11/10/2020	F: Ch 5 (pp. 144-151, Chapter overview -> Research example for modeling a mediational indirect effect)
+Th	12	11/5/2020	F: Ch 4 (pp. 131-143, Interactions with a continuous moderator -> Chapter summary; HW#10: LinkedIn Learning -> SPSS Statistics essential training (Barton Poulson) [sections 8-10]
+T	13	11/10/2020	F: Ch 5 (pp. 144-151, Chapter overview -> Research example for modeling a mediational indirect effect); take-home quiz #4 on Ch. 4
 Th	13	11/12/2020	F: Ch 5 (pp. 151-161, Estimation and inference for the indirect effect -> Chapter summary
 T	14	11/17/2020	F: Ch 7 (pp. 213-224, Why matrix algebra? -> Multiplication with matrices
-Th	14	11/19/2020	F: Ch 7 (pp. 224-231, What about division? Determinants and matrix inversion -> Matrix calculations for statistical applications
+Th	14	11/19/2020	F: Ch 7 (pp. 224-231, What about division? Determinants and matrix inversion -> Matrix calculations for statistical applications; take-home quiz #5 on Ch. 5
 T	15	11/24/2020	F: Ch 7 (pp. 231, Matrix calculations for linear regression -> Chapter summary
-W	16	12/1/2020	Actually due at the latest on 12/9/2020 by 4:30 pm. See syllabus for details
+W	16	12/1/2020	Take-home Final Exam -> Actually due at the latest on 12/9/2020 by 4:30 pm. See syllabus for details.
