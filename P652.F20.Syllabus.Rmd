@@ -26,6 +26,26 @@ pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr)
 
 ```
 
+```{r ClassPoints}
+
+# For aesthetics, the class points are set up in a separate R script (not RMarkdown)
+# Homework
+A <- 30 # value
+B <-10 # quantity
+
+# Quizzes
+C <- 60
+D <- 5
+
+# Exams
+E <- 200
+G <- 1
+
+N <- sum((A*B),(C*D),(E*G))
+
+```
+
+
 # {.tabset .tabset-fade .tabset-pills}
 
 ## Overview
@@ -41,11 +61,10 @@ pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr)
 
 |  **Class-Leader Information**                                                                                             |
 |:-----------------:|:---------------------:|:----------------:|:------------------:|:-----------------:|:-------------:|
-|            **Role**            |         **Name**        |     **Office**     |      **E-Mail**      |    **Zoom Hours**   |  **Zoom Link**$\dagger$ |
+|            **Role**            |         **Name**        |     **Office**     |      **E-Mail**      |    **Zoom Hours**   |  **Zoom Link** |
 | Instructor                 | Patrick Bolger, PhD | Psychology 225 | pbolger@tamu.edu | Fridays, 1-3 pm | [click here](https://tamu.zoom.us/j/811222380) |
 
 
-$\dagger$ See extended Zoom information under the sub-tab ***Zoom Info***
 
 ## Description {.tabset .tabset-fade .tabset-pills}
 
@@ -83,79 +102,50 @@ If you are interested for some reason, the [description from the Undergraduate C
 
 <br/>
 
-## Outcomes  {.tabset .tabset-fade .tabset-pills}
-
-### Course {.tabset .tabset-fade .tabset-pills}
+## Outcomes {.tabset .tabset-fade .tabset-pills}
 
 This course has the following specific learning outcomes. At the conclusion of the course, you should have the following:
 
 <br/>
 
-#### Concepts  
+### Concepts  
 
 - A renewed understanding$^{\dagger}$ of basic statistical concepts of the type normally covered in undergraduate Psychology courses  
 - An excellent understanding$^{\ddagger}$ of the basics of the *General Linear Model* (GLM) and how it unites multiple linear regression and ANOVA designs into one framework  
 - A thorough understanding$^{\dagger\dagger}$ of the model-comparison approach to statistics as an alternative to traditional null-hypothesis testing  
 - A strong understanding$^{\dagger\dagger}$ of how the GLM meshes with particular research designs   
   
-<br/>
+---
 
-#### Software tools for data wrangling 
+$\dagger$ ... as measured on homework  
+$\dagger\dagger$ ... as measured on quizzes and the exam  
+$\ddagger$ ... as measured on all 
+
+### Software {.tabset .tabset-fade .tabset-pills}
+
+#### for data wrangling 
 
 - The ability$^{\dagger}$ to use spreadsheets for data entry, organization, manipulation, and data export to more powerful statistical software programs   
 - A basic, working knowledge$^{\dagger}$ of the data-wrangling capabilities of the open-source statistical programming language [R](https://www.r-project.org/) through the IDE [RStudio](https://www.rstudio.com/)  
 - Fluency$^{\ddagger}$ in using [RMarkdown](https://rmarkdown.rstudio.com/), which is a way to combine word processing (as [Markdown](https://daringfireball.net/projects/markdown/)) and statistical software (R) into one platform for writing up reports, presentations, and manuscripts    
 - The equivalent to the point above (to the extent possible)$^{\dagger}$ in both spreadsheets (for most or all of you, [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel)) and [SPSS](https://www.ibm.com/analytics/spss-statistics-software)  
   
-<br/>
+---
 
-#### Software tools for statistics  
+$\dagger$ ... as measured on homework  
+$\dagger\dagger$ ... as measured on quizzes and the exam  
+$\ddagger$ ... as measured on all 
+
+#### for statistics  
 - The ability$^{\ddagger}$ to implement the GLM using R and SPSS    
 - A strong understanding$^{\ddagger}$ of how not only to test for compliance with assumptions, but also to interpret the results  
 
---- 
+---
 
 $\dagger$ ... as measured on homework  
 $\dagger\dagger$ ... as measured on quizzes and the exam  
 $\ddagger$ ... as measured on all    
   
-<br/>
-
-### University {.tabset .tabset-fade .tabset-pills}
-
-Texas A&M University has identified student learning outcomes that describe our institutional commitment to your educational goals. These include the ability to demonstrate critical thinking, effective communication, and social, cultural, and global competence. Please see [https://catalog.tamu.edu/undergraduate/general-information/student-learning-outcomes/](https://catalog.tamu.edu/undergraduate/general-information/student-learning-outcomes/). 
-
-<br/>
-    
-#### Knowledge Required for the Degree  
-
-***MORE MORE MORE***
-
-<br/>
-
-#### Critical Thinking  
-
-Since statistics is the math of uncertainty, there is a great deal of critical thinking involved. The classic illustration of this is [Simpson's Paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox). Statistics is a tool for scientific reasoning, but it is incomplete without critical thinking. We will encounter this often in this course.
-
-<br/>
-
-#### Communication  
-
-You will learn how to communicate statistical results to other researchers in Psychology, as well as colleagues in industry. These can be **very** different audiences. 
-
-<br/>
-
-#### Personal and Social Responsibility  
-
-You will consider how data should be collected, presented, and interpreted in an ethical manner. You will learn about the importance of transparency in conducting and reporting statistical analyses.  
-
-<br/>
-
-#### Collaboration  
-
-Much of this class will involve (or at least permit) collaboration. We will spend some time on how this is done with modern tools In fact, this is a really important issue that often gets overlooked in the world of data science and statistics, and even more commonly in academia. In my opinion, doing things the "old-fashioned way" is a **major** contributor to workflow bottlenecks and errors.
-
-<br/>
 
 ## Materials {.tabset .tabset-fade .tabset-pills}
 
@@ -239,59 +229,28 @@ From the description on the home page of Bookdown:
 
 <br/>
 
-```{r ClassPoints}
-# For aesthetics, the class points are set up in a separate R script (not RMarkdown)
-# Homework
-hwVal <- 20 # value
-hwQnt <-10 # quantity
-hwTot <- hwVal*hwQnt # total (repeats below)
-
-# Quizzes
-qzVal <- 100
-qzQnt <- 5
-qzTot <- qzVal*qzQnt
-
-# Exams
-fnlVal <- 200
-fnlQnt <- 1
-fnlTot <- fnlVal*fnlQnt
-
-# Attendance
-atndVal <- 4
-atndQnt <- 28
-atndTot <- atndVal*atndQnt
-
-gradeTot <- 1000
-pntsPoss <- sum(hwTot,qzTot,fnlTot,atndTot)
-```
 
 ## Tasks {.tabset .tabset-fade .tabset-pills}
 
-There are `r gradeTot` points that count towards the final grade in this class (out of `r pntsPoss` possible). The breakdown is below:  
+There are `r N` points that count towards the final grade in this class. The breakdown is below:  
 
 <br/>
 
 ### Homework
 
-There will be `r hwQnt` homework assignments based on tutorials in either *Kanopy* or *LinkedIn Learning*. Each is worth `r hwVal` points, for a total of `r hwTot`.
+There will be `r B` homework assignments based on tutorials in either *Kanopy* or *LinkedIn Learning*. Each is worth `r A` points, for a total of `r A*B`.
 
 <br/>
 
 ### Take-home Quizzes
 
-There will be `r qzQnt` take-home quizzes based on the Chapters in the Flora textbook. Each is worth `r qzVal` points, for a total of `r qzTot`.  
+There will be `r D` take-home quizzes based on the Chapters in the Flora textbook. Each is worth `r C` points, for a total of `r C*D`.  
 
 <br/>
 
 ### Take-home Final Exam
 
-There will be one take-home final exam, which is worth `r fnlTot` points. You will all replicate a study of your collective choosing from I/O Psychology. Each of you will end up with different data with different results. However, conceptually you can talk to each other about your findings and what they mean.
-
-<br/>
-
-### Attendance
-
-This is unusual for a graduate class, but in semesters past, some students in this course decided to stop coming. You can't afford that kind of mistake. So I'm making attendance part of the grade. Each attendance is worth `r atndVal` points. There are `r atndQnt` classes, meaning `r atndTot` points. This puts us `r pntsPoss-gradeTot` points past the maximum number of points in the class, but that's okay. Do not miss these easy points. Since there are 3 "extra" classes here, I will be very strict about attendance, unless you are in dire straits.
+There will be `r G` take-home final exam, which is worth `r E*G` points. You will all replicate a study of your collective choosing from I/O Psychology. Each of you will end up with different data with different results. However, conceptually you can talk to each other about your findings and what they mean.
 
 <br/>
 
@@ -302,26 +261,22 @@ This is unusual for a graduate class, but in semesters past, some students in th
 Final grades will be assigned at the end of the semester on the basis of the total number of points earned out of a possible 700 points, based on the following components:  
 
 |       **Component**      | **Points per Component** | **Number of Components** | **Total Points** |  %  |
-|:--------------------:|:--------------------:|:--------------------:|:------------:|:---:|
-| Homework             |          `r hwVal`          |          `r hwQnt`          |      `r hwTot`     |  `r (hwTot/gradeTot)*100` |
-| Take-home Quizzes    |          `r qzVal`         |           `r qzQnt`          |      `r qzTot`     |  `r (qzTot/gradeTot)*100` |
-| Take-home Final Exam |          `r fnlVal`         |           `r fnlQnt`          |      `r fnlTot`     |  `r (fnlTot/gradeTot)*100` |
-| Attendance           |          `r atndVal`           |          `r atndQnt`          |      `r atndTot`     |  `r (atndTot/gradeTot)*100` |
-| **Totals**           |                      |                      |  **1,000**$^{\dagger\dagger}$   |**100**$^{\dagger\dagger}$|
-
-$\dagger\dagger$ Obviously, there are `r pntsPoss-gradeTot` extra points possible beyond the `r gradeTot` point limit, and these extra points come through attendance. Your point total will still be calculated out of `r gradeTot` points, though you could go over, theoretically.  
+|:--------------------|:--------------------:|:--------------------:|:------------:|:---:|
+| Homework             |          `r A`         |           `r B`         |      `r A*B`            |  `r (A*B/N)*100` |
+| Take-home Quizzes    |          `r C`         |           `r D`         |      `r C*D`            |  `r (C*D/N)*100` |
+| Take-home Final Exam |          `r E`         |           `r G`         |      `r E*G`            |  `r (E*G/N)*100` |
+| **Totals**           |                        |                         |      `r N`              |   **100**        |
 
 <br/>
 
 ### Letter Grades  
 
-The letter grades will be assigned as follows: 
-
+**Below, $y$ represents any particular student's total percentage/points for the course**. Letter grades (with strict cutoffs) will be assigned as follows:   
 
 | Grade 	| A 	| B 	| C 	| D 	| F 	|
-|:--------:	|:------------:	|:---------------:	|:---------------:	|:---------------:	|:---------------:	|
-| Percents 	| 89.5 to 100% 	| 79.5 to 89.499% 	| 69.5 to 79.499% 	| 59.5 to 69.499% 	| Less than 59.5% 	|
-| Points 	| `r .895*gradeTot` to  `r gradeTot`	| `r .795*gradeTot` to `r round(.89499*gradeTot,3)` 	| `r .695*gradeTot` to `r round(.79499*gradeTot,3)` 	| `r .595*gradeTot` to `r round(.69499*gradeTot,3)` 	| Less than `r .595*gradeTot` 	|
+|--------	|:------------:	|:---------------:	|:---------------:	|:---------------:	|:---------------:	|
+| Percent 	| 89.5% $\le y$ 	| 79.5% $\le y \lt$ 89.5% 	| 69.5% $\le y \lt$ 79.5% 	| 59.5% $\le y \lt$ 69.5% 	| $y \lt$ 59.5% 	|
+| Points 	| `r N*.895` $\le y$ 	| `r N*.795` $\le y \lt$ `r N*.895` 	| `r N*.695` $\le y \lt$ `r N*.795` 	| `r N*.595` $\le y \lt$ `r N*.695` 	| $y \lt$ `r N*.595` 	|
 
 ## Schedule
 
@@ -390,7 +345,7 @@ If you wish to dispute a grade on an assignment or exam, you must submit a writt
 
 #### Cheating
 
-***MORE MORE MORE***
+Cheating in this class would mainly take the following form: Copying code from someone else to solve a problem, and in the process, failing to learn to code.
 
 ### University {.tabset .tabset-fade .tabset-pills}
 
