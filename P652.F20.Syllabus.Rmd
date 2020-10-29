@@ -62,7 +62,7 @@ N <- sum((A*B),(C*D),(E*G))
 |  **Class-Leader Information**                                                                                             |
 |:-----------------:|:---------------------:|:----------------:|:------------------:|:-----------------:|:-------------:|
 |            **Role**            |         **Name**        |     **Office**     |      **E-Mail**      |    **Zoom Hours**   |  **Zoom Link** |
-| Instructor                 | Patrick Bolger, PhD | Psychology 225 | pbolger@tamu.edu | Fridays, 1-3 pm | [click here](https://tamu.zoom.us/j/811222380) |
+| Instructor                 | Patrick Bolger, PhD | Psychology 225 | pbolger@tamu.edu | Thursdays, 12:30-2:30 pm | [click here](https://tamu.zoom.us/j/811222380) |
 
 
 
