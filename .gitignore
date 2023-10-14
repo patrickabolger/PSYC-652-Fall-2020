@@ -1,6 +1,9 @@
 # Mac stuff
 .DS_Store
 
+# TAMU stuff
+/images/TAM-PrimaryMarkA.png
+
 # History files
 .Rhistory
 .Rapp.history
