@@ -17,6 +17,8 @@ editor_options:
     wrap: 72
 ---
 
+<!-- NOTE THAT the image file in the YAML header under "title:" is not available. Remove that line after forking -->
+
 <!-- Setup -->
 
 ```{r setup, include=F}
