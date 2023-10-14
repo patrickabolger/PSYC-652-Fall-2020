@@ -11,6 +11,10 @@ output:
   html_document:
     theme: cerulean
     df_print: paged
+editor_options:
+  markdown:
+    canonical: false
+    wrap: 72
 ---
 
 <!-- Setup -->
@@ -20,9 +24,11 @@ knitr::opts_chunk$set(echo = F, warning = F, message = F)
 ```
 
 ```{r LoadPackages, include=F}
-#if(!require(pacman)){install.packages("pacman");require(pacman)} # un-comment and run this if the 'pacman' package is not installed. 
-# It's required for the function below.
-pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr)
+
+# install the packages below if needed
+pkgs <- c("dplyr", "knitr", "magrittr", "readr", "tibble", "tidyr")
+lapply(pkgs, library, character.only=T)
+require(kableExtra)
 
 ```
 
@@ -298,7 +304,7 @@ pack_rows("Unit 6 - Chapter 7: Basic Matrix Algebra for Statistical Modeling", 2
 pack_rows("Take-home Final Exam", 29, 29) %>%
 row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
 row_spec(29:29, bold = T, color = "white", background = "#500000") %>%
-kable_styling(bootstrap_options = "striped", font_size=14, full_width = F, position = "left")
+kableExtra::kable_styling(bootstrap_options = "striped", font_size=14, full_width = F, position = "left")
 ```
 
 ## Office Hours
